@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Airi — Data & Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C2B26;
+    --paper:#F1F3ED;
+    --surface:#FFFFFF;
+    --gold:#C99A3E;
+    --teal:#3B6E86;
+    --moss:#445E4B;
+    --line:#D8DBD1;
+    --muted:#5C6B62;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  .wrap{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(241,243,237,0.9);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:68px;
+  }
+  .brand{
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    font-weight:600;
+    letter-spacing:0.01em;
+  }
+  .nav-links{ display:flex; gap:28px; font-size:0.88rem; color:var(--muted); }
+  .nav-links a:hover{ color:var(--ink); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:96px 0 88px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-contours{
+    position:absolute; inset:0;
+    z-index:0;
+    opacity:0.35;
+    pointer-events:none;
+  }
+  .hero .wrap{ position:relative; z-index:1; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--teal);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--teal);
+    display:inline-block;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(2.1rem, 4.2vw, 3.4rem);
+    line-height:1.1;
+    max-width:760px;
+    letter-spacing:-0.01em;
+  }
+  h1 em{
+    font-style:italic;
+    color:var(--teal);
+  }
+  .hero-sub{
+    margin-top:22px;
+    max-width:560px;
+    color:var(--muted);
+    font-size:1.05rem;
+  }
+  .hero-meta{
+    margin-top:36px;
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    padding:6px 12px;
+    border:1px solid var(--line);
+    border-radius:100px;
+    color:var(--muted);
+    background:var(--surface);
+  }
+
+  /* ---------- SECTION LABEL ---------- */
+  .section{ padding:80px 0; }
+  .section-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    margin-bottom:40px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:20px;
+  }
+  .section-head h2{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:1.7rem;
+  }
+  .section-head span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--muted);
+  }
+
+  /* ---------- PROJECT CARDS ---------- */
+  .projects{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:28px;
+  }
+  @media (max-width:760px){ .projects{ grid-template-columns:1fr; } }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 28px rgba(28,43,38,0.08);
+  }
+  .card-thumb{
+    height:170px;
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(28,43,38,0.03), rgba(28,43,38,0.0) 60%),
+      repeating-linear-gradient(90deg, transparent, transparent 38px, rgba(28,43,38,0.05) 38px, rgba(28,43,38,0.05) 39px);
+  }
+  .card-thumb svg{ position:absolute; inset:0; width:100%; height:100%; }
+  .card-body{ padding:24px 24px 26px; display:flex; flex-direction:column; flex:1; }
+  .card-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+  .stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:3px 8px;
+    border:1px dashed var(--moss);
+    color:var(--moss);
+    border-radius:2px;
+  }
+  .card h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:1.28rem;
+    margin-bottom:10px;
+  }
+  .card p{
+    color:var(--muted);
+    font-size:0.92rem;
+    flex:1;
+  }
+  .card-stats{
+    display:flex; gap:18px;
+    margin:16px 0 4px;
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .stat b{ font-size:1rem; color:var(--ink); display:block; }
+  .stat span{ font-size:0.68rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; }
+
+  .card-links{
+    margin-top:18px;
+    display:flex; gap:14px;
+    font-size:0.85rem;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+  }
+  .card-links a{
+    display:inline-flex; align-items:center; gap:6px;
+    color:var(--teal);
+    font-weight:500;
+  }
+  .card-links a:hover{ color:var(--ink); }
+  .card-links a::after{ content:"→"; transition:transform 0.2s ease; }
+  .card-links a:hover::after{ transform:translateX(3px); }
+
+  /* placeholder / coming-soon card */
+  .card.placeholder{
+    background:transparent;
+    border:1px dashed var(--line);
+    align-items:center; justify-content:center;
+    min-height:340px;
+    text-align:center;
+  }
+  .card.placeholder .card-body{ align-items:center; text-align:center; justify-content:center; }
+  .card.placeholder h3{ color:var(--muted); font-size:1.1rem; }
+  .card.placeholder p{ max-width:220px; margin:0 auto; }
+
+  /* ---------- EMBED SECTION ---------- */
+  .embed-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--muted);
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-left:3px solid var(--gold);
+    padding:14px 18px;
+    margin-bottom:24px;
+  }
+  .tableau-frame{
+    width:100%;
+    aspect-ratio:16/10;
+    border:1px solid var(--line);
+    border-radius:4px;
+    background:var(--surface);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:48px;
+  }
+  @media (max-width:760px){ .about-grid{ grid-template-columns:1fr; } }
+  .about-grid p{ color:var(--muted); margin-bottom:16px; }
+  .skills-list{ display:flex; flex-direction:column; gap:14px; }
+  .skills-row{
+    display:flex; justify-content:space-between;
+    padding-bottom:10px; border-bottom:1px solid var(--line);
+    font-size:0.9rem;
+  }
+  .skills-row span:first-child{ font-family:'IBM Plex Mono', monospace; color:var(--muted); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:48px 0;
+  }
+  footer .wrap{
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:16px;
+  }
+  .footer-links{ display:flex; gap:22px; font-size:0.88rem; }
+  .footer-links a{ color:var(--muted); }
+  .footer-links a:hover{ color:var(--teal); }
+  .footer-note{ font-family:'IBM Plex Mono', monospace; font-size:0.75rem; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Airi</div>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="hero-contours" viewBox="0 0 1100 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M-50 340 Q 200 300 400 340 T 900 330 T 1200 350" stroke="#3B6E86" stroke-width="1.2" fill="none"/>
+    <path d="M-50 300 Q 220 250 420 300 T 920 290 T 1200 310" stroke="#3B6E86" stroke-width="1.2" fill="none"/>
+    <path d="M-50 260 Q 240 200 440 260 T 940 250 T 1200 270" stroke="#C99A3E" stroke-width="1.2" fill="none"/>
+    <path d="M-50 220 Q 260 150 460 220 T 960 210 T 1200 230" stroke="#3B6E86" stroke-width="1" fill="none"/>
+    <path d="M-50 180 Q 280 100 480 180 T 980 170 T 1200 190" stroke="#445E4B" stroke-width="1" fill="none"/>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow">Data Analytics · GIS · Engineering</div>
+    <h1>Turning field data and rider data alike into decisions worth <em>acting</em> on.</h1>
+    <p class="hero-sub">I'm Airi — an engineer-turned-data-analyst based in Ireland, working across data analytics, GIS/spatial analysis, and sustainability. This page collects the projects I've built to show how I think, not just what I know.</p>
+    <div class="hero-meta">
+      <span class="chip">Tableau · SQL · Python</span>
+      <span class="chip">B.Eng. Soil & Water Conservation</span>
+      <span class="chip">EN · 中文 · 日本語</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <span>02 live · more in progress</span>
+      </div>
+
+      <div class="projects">
+
+        <!-- PROJECT 1: CYCLISTIC -->
+        <article class="card">
+          <div class="card-thumb">
+            <svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="90" width="26" height="60" fill="#C9CDC6"/>
+              <rect x="66" y="80" width="26" height="70" fill="#C9CDC6"/>
+              <rect x="102" y="70" width="26" height="80" fill="#3B6E86"/>
+              <rect x="138" y="60" width="26" height="90" fill="#3B6E86"/>
+              <rect x="174" y="50" width="26" height="100" fill="#3B6E86"/>
+              <rect x="210" y="55" width="26" height="95" fill="#C99A3E"/>
+              <rect x="246" y="40" width="26" height="110" fill="#C99A3E"/>
+              <line x1="20" y1="150" x2="380" y2="150" stroke="#1C2B26" stroke-width="1" opacity="0.15"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="stamp">Data Analytics</span>
+              <span class="stamp">Tableau</span>
+            </div>
+            <h3>Cyclistic Bike-Share: Member vs Casual Rider Behavior</h3>
+            <p>A capstone analysis of 5.68M bike-share rides, uncovering how annual members and casual riders differ by time, duration, and location — and what that means for converting casual riders into members.</p>
+            <div class="card-stats">
+              <div class="stat"><b>5.68M</b><span>Rides analyzed</span></div>
+              <div class="stat"><b>5</b><span>Dashboard views</span></div>
+              <div class="stat"><b>3</b><span>Recommendations</span></div>
+            </div>
+            <div class="card-links">
+              <a href="https://public.tableau.com/views/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis" target="_blank" rel="noopener">View interactive Story on Tableau Public</a>
+            </div>
+            <div class="card-links" style="border-top:none; padding-top:0; margin-top:6px;">
+              <a href="#" target="_blank" rel="noopener">Read the write-up on Medium</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: PLACEHOLDER -->
+        <article class="card placeholder">
+          <div class="card-body">
+            <h3>Next project — in progress</h3>
+            <p>A new analysis is on the way. Check back soon, or reach out for a preview.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Explore: Cyclistic Story</h2>
+        <span>Interactive · Tableau Public</span>
+      </div>
+      <div class="embed-note">
+        Replace the placeholder below with your published Tableau Public embed code (Share → Embed Code) once the workbook is live.
+      </div>
+      <div class="tableau-frame">
+        <div class='tableauPlaceholder' id='viz1783349665230' style='position: relative; width:100%; height:100%;'>
+          <noscript>
+            <a href='https://public.tableau.com/views/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis'>
+              <img alt='Cyclistic Bike-Share: Member vs Casual Rider Behavior Analysis ' src='https://public.tableau.com/static/images/Cy/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis/1_rss.png' style='border: none; width:100%; height:100%; object-fit:contain;' />
+            </a>
+          </noscript>
+          <object class='tableauViz' style='display:none; width:100%; height:100%;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='Cyclistic_CaseStudy_v2&#47;CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/Cy/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+            <param name='filter' value='publish=yes' />
+          </object>
+        </div>
+        <script type='text/javascript'>
+          var divElement = document.getElementById('viz1783349665230');
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          vizElement.style.width='100%';
+          vizElement.style.height='100%';
+          var scriptElement = document.createElement('script');
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>About</h2>
+        <span>Background</span>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>I trained as an engineer — B.Eng. in Soil and Water Conservation from National Chung Hsing University, Taiwan — with hands-on experience in flood vulnerability mapping, geotechnical site assessment, and hydrological modelling using ArcGIS and QGIS.</p>
+          <p>Since moving into data analytics, I've built out a Google Data Analytics-style skill set: SQL in BigQuery, Python, and Tableau, applied to real datasets like this Cyclistic capstone. I'm currently looking across data, GIS, and sustainability/engineering roles based in Ireland.</p>
+          <p>I work comfortably in English, Mandarin, and Japanese, and I'm currently building my Italian.</p>
+        </div>
+        <div class="skills-list">
+          <div class="skills-row"><span>Analytics</span><span>SQL · Tableau · Python · LibreOffice Calc</span></div>
+          <div class="skills-row"><span>GIS</span><span>ArcGIS Pro · QGIS · Spatial Analysis</span></div>
+          <div class="skills-row"><span>Domain</span><span>Water Conservation · EHS · Sustainability</span></div>
+          <div class="skills-row"><span>Languages</span><span>English · 中文 · 日本語</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-note">Based in Ireland · Open to Data / GIS / Sustainability roles</div>
+    <div class="footer-links">
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+      <a href="#" target="_blank" rel="noopener">Tableau Public</a>
+      <a href="mailto:you@example.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
