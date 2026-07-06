@@ -402,11 +402,16 @@
         <script type='text/javascript'>
           var divElement = document.getElementById('viz1783349665230');
           var vizElement = divElement.getElementsByTagName('object')[0];
-          vizElement.style.width='100%';
-          vizElement.style.height='100%';
+          if ( divElement.offsetWidth > 800 ) { 
+            vizElement.style.width='100%';vizElement.style.height='100%';
+          } else if ( divElement.offsetWidth > 500 ) { 
+            vizElement.style.width='100%';vizElement.style.height='100%';
+          } else { 
+            vizElement.style.width='100%';vizElement.style.height='100%';
+          }
           var scriptElement = document.createElement('script');
           scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-          vizElement.parentNode.insertBefore(scriptElement, vizElement);
+          vizElement.parentNode.insertBefore(scriptElement, scriptElement);
         </script>
       </div>
     </div>
@@ -438,10 +443,10 @@
   <div class="wrap">
     <div class="footer-note">Based in Ireland · Open to Data / GIS / Sustainability roles</div>
     <div class="footer-links">
-      <a href="www.linkedin.com/in/airi-hsieh" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="http://www.linkedin.com/in/airi-hsieh" target="_blank" rel="noopener">LinkedIn</a>
       <a href="#" target="_blank" rel="noopener">GitHub</a>
       <a href="#" target="_blank" rel="noopener">Tableau Public</a>
-      <a href="xieyachih@gmail.com">Email</a>
+      <a href="mailto:xieyachih@gmail.com">Email</a>
     </div>
   </div>
 </footer>
