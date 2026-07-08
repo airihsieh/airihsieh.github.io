@@ -1,3 +1,83 @@
+
+Claude finished the response
+
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Airi — Data & Engineering Portfolio</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstat
+
+pasted
+
+https://airihsieh.github.io/#  
+幫我更新code 讓我的兩個project都可以在下方"Explore" 的區塊檢視和互動
+
+
+策劃雙專案儀表板整合至探索區塊。
+策劃雙專案儀表板整合至探索區塊。
+我把 "Explore" 區塊改成了兩個 Tableau 互動頁籤，這樣兩個 project 都能在同一區塊直接檢視、互動：
+
+主要改動：
+
+新增 Tab 切換：Explore 區塊上方多了兩個按鈕「Cyclistic Bike-Share」「River Lee Flood Risk」，點擊就能切換對應的互動 Tableau 儀表板，不用往下滑很多次。
+River Lee 專案的 Tableau embed 現在也放進來了（之前只有 Cyclistic 有 embed code，River Lee 只有連結）。我用你在卡片上提供的 workbook 名稱 RainfallRunoffPattern_v1 / view RiverLee 組出 embed code，結構跟 Cyclistic 那組完全對應。
+卡片上的連結改成「View interactive Story below ↓」，點了會自動捲到 Explore 區並切到對應的頁籤，體驗更順。
+Nav 列也加了 Explore 連結方便直接跳轉。
+你需要確認/補的地方：
+
+River Lee 的 embed 我是用你卡片連結裡的 workbook/view 名稱組的，但縮圖網址（static_image）是我推測的路徑（/Ra/RainfallRunoffPattern_v1/RiverLee/1.png）。建議去 Tableau Public 該 workbook 頁面按「Share → Embed Code」，把真正的 embed code 貼給我核對一下，確保縮圖跟資料版本是最新的。
+兩個專案目前共用同一個 SVG 縮圖（bar chart 圖案），如果想讓 River Lee 卡片用不一樣的視覺（比如水位/降雨相關的線條），可以告訴我。
+要我把這個檔案直接幫你組進 GitHub Pages 的目錄結構，或是先讓你在本地打開看看效果？
+
+
+Index
+Code · HTML 
+<div class='tableauPlaceholder' id='viz1783542244160' style='position: relative'><noscript><a href='#'><img alt='Optimizing Emergency Response Windows Analyzing Rainfall-Runoff Patterns in Macroom, Ireland ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ra&#47;RainfallRunoffPattern_v1&#47;RiverLee&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='RainfallRunoffPattern_v1&#47;RiverLee' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ra&#47;RainfallRunoffPattern_v1&#47;RiverLee&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1783542244160');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1100px';vizElement.style.height='1027px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<div class='tableauPlaceholder' id='viz1783542263011' style='position: relative'><noscript><a href='#'><img alt='Hourly Patterns &amp; Bike Type ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cy&#47;Cyclistic_CaseStudy_v2&#47;HourlyPatternsBikeType&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Cyclistic_CaseStudy_v2&#47;HourlyPatternsBikeType' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cy&#47;Cyclistic_CaseStudy_v2&#47;HourlyPatternsBikeType&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1783542263011');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1600px';vizElement.style.height='927px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+Show more
+
+Identified missing required parameter in schema definition
+Identified missing required parameter in schema definition
+Both面板已經換成你貼的正式 embed code，並依照 Tableau 給的實際尺寸調整了長寬比（River Lee 用 1100×1027、Cyclistic 用 1600×927），這樣在不同螢幕寬度下比例才會正確，不會被壓扁或裁切。
+
+
+Presented file
+Presented file
+有一點想跟你確認：Cyclistic 那個 embed 你貼的是 "Hourly Patterns & Bike Type" 這個單一視圖，不是原本卡片連結的完整 Story（CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis，包含11個工作表、5頁 dashboard）。我先照你貼的內容更新了標題和 embed，並把「查看完整 Story」的連結留在下方，讓使用者還是可以連到完整版。
+
+如果你其實是想把完整 Story 換成這個單一視圖，或是想兩個都放上去（比如再加一個頁籤），跟我說一聲我再調整。
+
+
+Index
+Code · HTML 
+River Lee 卡片用不一樣的視覺（比如水位/降雨相關的線條）
+
+
+設計水文圖表視覺化呈現河流數據。
+設計水文圖表視覺化呈現河流數據。
+River Lee 卡片的縮圖換成了水文圖（hydrograph）風格：
+
+金色長條 = 降雨量（隨時間分布）
+藍色曲線 + 淡色填充 = 河川水位變化，可以看到降雨後水位隨之上升的關聯
+底部保留了跟 hero 區呼應的等高線筆觸，維持整體視覺一致性
+Cyclistic 那張卡片維持原本的長條圖縮圖不動，兩個專案現在視覺上就能一眼分辨出主題差異。
+
+
+Presented file
+Presented file
+要不要我也把 explore 區塊裡對應的 h3 標題或整體配色再調一下，讓 River Lee 那個頁籤的視覺跟這個新縮圖更呼應？
+
+
+Index
+Code · HTML 
+
+
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +98,11 @@
     --line:#D8DBD1;
     --muted:#5C6B62;
   }
-
+ 
   *{ box-sizing:border-box; margin:0; padding:0; }
-
+ 
   html{ scroll-behavior:smooth; }
-
+ 
   body{
     background:var(--paper);
     color:var(--ink);
@@ -30,15 +110,15 @@
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
-
+ 
   a{ color:inherit; text-decoration:none; }
-
+ 
   .wrap{
     max-width:1100px;
     margin:0 auto;
     padding:0 32px;
   }
-
+ 
   /* ---------- NAV ---------- */
   nav{
     position:sticky; top:0; z-index:50;
@@ -58,7 +138,7 @@
   }
   .nav-links{ display:flex; gap:28px; font-size:0.88rem; color:var(--muted); }
   .nav-links a:hover{ color:var(--ink); }
-
+ 
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
@@ -119,7 +199,7 @@
     color:var(--muted);
     background:var(--surface);
   }
-
+ 
   /* ---------- SECTION LABEL ---------- */
   .section{ padding:80px 0; }
   .section-head{
@@ -138,7 +218,7 @@
     font-size:0.78rem;
     color:var(--muted);
   }
-
+ 
   /* ---------- PROJECT CARDS ---------- */
   .projects{
     display:grid;
@@ -146,7 +226,7 @@
     gap:28px;
   }
   @media (max-width:760px){ .projects{ grid-template-columns:1fr; } }
-
+ 
   .card{
     background:var(--surface);
     border:1px solid var(--line);
@@ -197,7 +277,7 @@
   }
   .stat b{ font-size:1rem; color:var(--ink); display:block; }
   .stat span{ font-size:0.68rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; }
-
+ 
   .card-links{
     margin-top:18px;
     display:flex; gap:14px;
@@ -213,7 +293,9 @@
   .card-links a:hover{ color:var(--ink); }
   .card-links a::after{ content:"→"; transition:transform 0.2s ease; }
   .card-links a:hover::after{ transform:translateX(3px); }
-
+ 
+  .card-links.jump::after{ content:""; }
+ 
   /* placeholder / coming-soon card */
   .card.placeholder{
     background:transparent;
@@ -225,10 +307,36 @@
   .card.placeholder .card-body{ align-items:center; text-align:center; justify-content:center; }
   .card.placeholder h3{ color:var(--muted); font-size:1.1rem; }
   .card.placeholder p{ max-width:220px; margin:0 auto; }
-
-  /* ---------- EMBED SECTION ---------- */
-  .embed-container {
-    margin-bottom: 60px;
+ 
+  /* ---------- EXPLORE / TABS ---------- */
+  .explore-tabs{
+    display:flex; gap:10px; flex-wrap:wrap;
+    margin-bottom:28px;
+  }
+  .tab-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    padding:10px 18px;
+    border:1px solid var(--line);
+    border-radius:100px;
+    background:var(--surface);
+    color:var(--muted);
+    cursor:pointer;
+    transition:all 0.2s ease;
+  }
+  .tab-btn:hover{ color:var(--ink); border-color:var(--teal); }
+  .tab-btn.active{
+    background:var(--teal);
+    border-color:var(--teal);
+    color:var(--surface);
+  }
+  .explore-panel{ display:none; }
+  .explore-panel.active{ display:block; }
+  .explore-panel h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:1.25rem;
+    margin-bottom:14px;
   }
   .embed-note{
     font-family:'IBM Plex Mono', monospace;
@@ -242,18 +350,23 @@
   }
   .tableau-frame{
     width:100%;
-    height: 600px;
+    aspect-ratio:16/10;
     border:1px solid var(--line);
     border-radius:4px;
     background:var(--surface);
-    overflow: hidden;
   }
-  .tableau-frame iframe{
-    width: 100%;
-    height: 100%;
-    border: none;
+  .panel-links{
+    margin-top:16px;
+    display:flex; gap:14px;
+    font-size:0.85rem;
+    flex-wrap:wrap;
   }
-
+  .panel-links a{
+    color:var(--teal);
+    font-weight:500;
+  }
+  .panel-links a:hover{ color:var(--ink); }
+ 
   /* ---------- ABOUT ---------- */
   .about-grid{
     display:grid;
@@ -269,7 +382,7 @@
     font-size:0.9rem;
   }
   .skills-row span:first-child{ font-family:'IBM Plex Mono', monospace; color:var(--muted); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em;}
-
+ 
   /* ---------- FOOTER ---------- */
   footer{
     border-top:1px solid var(--line);
@@ -286,7 +399,7 @@
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <div class="wrap">
     <div class="brand">Airi</div>
@@ -298,7 +411,7 @@
     </div>
   </div>
 </nav>
-
+ 
 <header class="hero">
   <svg class="hero-contours" viewBox="0 0 1100 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M-50 340 Q 200 300 400 340 T 900 330 T 1200 350" stroke="#3B6E86" stroke-width="1.2" fill="none"/>
@@ -318,7 +431,7 @@
     </div>
   </div>
 </header>
-
+ 
 <main>
   <section class="section" id="projects">
     <div class="wrap">
@@ -326,9 +439,9 @@
         <h2>Projects</h2>
         <span>02 live · more in progress</span>
       </div>
-
+ 
       <div class="projects">
-
+ 
         <!-- PROJECT 1: CYCLISTIC -->
         <article class="card">
           <div class="card-thumb">
@@ -348,4 +461,238 @@
               <span class="stamp">Data Analytics</span>
               <span class="stamp">Tableau</span>
             </div>
-            <h3>Cyclistic Bike-
+            <h3>Cyclistic Bike-Share: Member vs Casual Rider Behavior</h3>
+            <p>A capstone analysis of 5.68M bike-share rides, uncovering how annual members and casual riders differ by time, duration, and location — and what that means for converting casual riders into members.</p>
+            <div class="card-stats">
+              <div class="stat"><b>5.68M</b><span>Rides analyzed</span></div>
+              <div class="stat"><b>5</b><span>Dashboard views</span></div>
+              <div class="stat"><b>3</b><span>Recommendations</span></div>
+            </div>
+            <div class="card-links jump">
+              <a href="#explore" data-tab-target="cyclistic">View interactive Story below ↓</a>
+            </div>
+            <div class="card-links" style="border-top:none; padding-top:0; margin-top:6px;">
+              <a href="https://medium.com/@xieyachih/how-does-a-bike-share-navigate-speedy-success-a-cyclistic-case-study-81a707f5a77a" target="_blank" rel="noopener">Read the write-up on Medium</a>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- PROJECT 2: RIVER LEE -->
+        <article class="card">
+          <div class="card-thumb">
+            <svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg">
+              <!-- water level fill under the line -->
+              <path d="M0 130 L0 108 C 30 100, 55 118, 85 112 C 115 106, 135 70, 165 60 C 195 50, 220 78, 250 82 C 280 86, 305 60, 335 52 C 360 45, 380 58, 400 62 L400 130 Z"
+                    fill="#3B6E86" opacity="0.10"/>
+              <!-- river / water level line (hydrograph) -->
+              <path d="M0 108 C 30 100, 55 118, 85 112 C 115 106, 135 70, 165 60 C 195 50, 220 78, 250 82 C 280 86, 305 60, 335 52 C 360 45, 380 58, 400 62"
+                    fill="none" stroke="#3B6E86" stroke-width="2.4"/>
+              <!-- rainfall bars -->
+              <rect x="20"  y="30" width="7" height="22" fill="#C99A3E" opacity="0.85"/>
+              <rect x="40"  y="18" width="7" height="34" fill="#C99A3E" opacity="0.85"/>
+              <rect x="60"  y="24" width="7" height="28" fill="#C99A3E" opacity="0.6"/>
+              <rect x="130" y="10" width="7" height="42" fill="#C99A3E" opacity="0.85"/>
+              <rect x="150" y="20" width="7" height="32" fill="#C99A3E" opacity="0.6"/>
+              <rect x="260" y="26" width="7" height="26" fill="#C99A3E" opacity="0.6"/>
+              <rect x="280" y="14" width="7" height="38" fill="#C99A3E" opacity="0.85"/>
+              <rect x="300" y="28" width="7" height="24" fill="#C99A3E" opacity="0.5"/>
+              <!-- contour-style baseline strokes (echoes hero) -->
+              <path d="M-10 150 Q 100 140 200 150 T 410 148" stroke="#445E4B" stroke-width="1" fill="none" opacity="0.35"/>
+              <path d="M-10 158 Q 100 150 200 158 T 410 156" stroke="#445E4B" stroke-width="1" fill="none" opacity="0.2"/>
+              <line x1="20" y1="150" x2="380" y2="150" stroke="#1C2B26" stroke-width="1" opacity="0.15"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="stamp">Data Analytics</span>
+              <span class="stamp">Tableau</span>
+            </div>
+            <h3>Optimizing Emergency Response Windows: Analyzing Rainfall-Runoff Patterns in Macroom, Ireland</h3>
+            <p>How hydrological domain knowledge and SQL analytics can transform raw environmental data into actionable insurance insights.</p>
+            <div class="card-stats">
+              <div class="stat"><b>2</b><span>years analyzed</span></div>
+              <div class="stat"><b>7</b><span>Dashboard views</span></div>
+              <div class="stat"><b>3</b><span>Recommendations</span></div>
+            </div>
+            <div class="card-links jump">
+              <a href="#explore" data-tab-target="river">View interactive Story below ↓</a>
+            </div>
+            <div class="card-links" style="border-top:none; padding-top:0; margin-top:6px;">
+              <a href="https://medium.com/@xieyachih/how-does-a-bike-share-navigate-speedy-success-a-cyclistic-case-study-81a707f5a77a" target="_blank" rel="noopener">Read the write-up on Medium</a>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- PROJECT 3: PLACEHOLDER -->
+        <article class="card placeholder">
+          <div class="card-body">
+            <h3>Next project — in progress</h3>
+            <p>A new analysis is on the way. Check back soon, or reach out for a preview.</p>
+          </div>
+        </article>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section" id="explore" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Explore the Dashboards</h2>
+        <span>Interactive · Tableau Public</span>
+      </div>
+ 
+      <div class="explore-tabs">
+        <button class="tab-btn active" data-tab="cyclistic">Cyclistic Bike-Share</button>
+        <button class="tab-btn" data-tab="river">River Lee Flood Risk</button>
+      </div>
+ 
+      <!-- PANEL 1: CYCLISTIC -->
+      <div class="explore-panel active" id="panel-cyclistic">
+        <h3>Cyclistic Bike-Share — Hourly Patterns &amp; Bike Type</h3>
+        <div class="tableau-frame" style="aspect-ratio:1600/927;">
+          <div class='tableauPlaceholder' id='viz_cyclistic' style='position: relative; width:100%; height:100%;'>
+            <noscript>
+              <a href='https://public.tableau.com/views/Cyclistic_CaseStudy_v2/HourlyPatternsBikeType'>
+                <img alt='Hourly Patterns &amp; Bike Type' src='https://public.tableau.com/static/images/Cy/Cyclistic_CaseStudy_v2/HourlyPatternsBikeType/1_rss.png' style='border: none; width:100%; height:100%; object-fit:contain;' />
+              </a>
+            </noscript>
+            <object class='tableauViz' style='display:none; width:100%; height:100%;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='Cyclistic_CaseStudy_v2&#47;HourlyPatternsBikeType' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Cy/Cyclistic_CaseStudy_v2/HourlyPatternsBikeType/1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='en-US' />
+            </object>
+          </div>
+        </div>
+        <div class="panel-links">
+          <a href="https://public.tableau.com/views/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis" target="_blank" rel="noopener">Open full Story on Tableau Public →</a>
+          <a href="https://medium.com/@xieyachih/how-does-a-bike-share-navigate-speedy-success-a-cyclistic-case-study-81a707f5a77a" target="_blank" rel="noopener">Read the write-up on Medium →</a>
+        </div>
+      </div>
+ 
+      <!-- PANEL 2: RIVER LEE -->
+      <div class="explore-panel" id="panel-river">
+        <h3>Optimizing Emergency Response Windows: Rainfall-Runoff Patterns in Macroom, Ireland</h3>
+        <div class="tableau-frame" style="aspect-ratio:1100/1027;">
+          <div class='tableauPlaceholder' id='viz_river' style='position: relative; width:100%; height:100%;'>
+            <noscript>
+              <a href='https://public.tableau.com/views/RainfallRunoffPattern_v1/RiverLee'>
+                <img alt='Optimizing Emergency Response Windows Analyzing Rainfall-Runoff Patterns in Macroom, Ireland' src='https://public.tableau.com/static/images/Ra/RainfallRunoffPattern_v1/RiverLee/1_rss.png' style='border: none; width:100%; height:100%; object-fit:contain;' />
+              </a>
+            </noscript>
+            <object class='tableauViz' style='display:none; width:100%; height:100%;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='RainfallRunoffPattern_v1&#47;RiverLee' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Ra/RainfallRunoffPattern_v1/RiverLee/1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='en-US' />
+            </object>
+          </div>
+        </div>
+        <div class="panel-links">
+          <a href="https://public.tableau.com/views/RainfallRunoffPattern_v1/RiverLee?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" rel="noopener">Open full-screen on Tableau Public →</a>
+        </div>
+      </div>
+ 
+    </div>
+  </section>
+ 
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>About</h2>
+        <span>Background</span>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>I trained as an engineer — B.Eng. in Soil and Water Conservation from National Chung Hsing University, Taiwan — with hands-on experience in flood vulnerability mapping, geotechnical site assessment, and hydrological modelling using ArcGIS and QGIS.</p>
+          <p>Since moving into data analytics, I've built out a Google Data Analytics-style skill set: SQL in BigQuery, Python, and Tableau, applied to real datasets like the Cyclistic and River Lee case studies above. I'm currently looking across data analyst and GIS roles based in Ireland.</p>
+        </div>
+        <div class="skills-list">
+          <div class="skills-row"><span>Analytics</span><span>SQL · Tableau · Python · LibreOffice Calc</span></div>
+          <div class="skills-row"><span>GIS</span><span>ArcGIS Pro · QGIS · Spatial Analysis</span></div>
+          <div class="skills-row"><span>Domain</span><span>Water Conservation · EHS · Sustainability</span></div>
+          <div class="skills-row"><span>Languages</span><span>English · 中文 · 日本語</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+ 
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-note">Based in Ireland · Open to Data / GIS / Sustainability roles</div>
+    <div class="footer-links">
+      <a href="http://www.linkedin.com/in/airi-hsieh" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+      <a href="#" target="_blank" rel="noopener">Tableau Public</a>
+      <a href="mailto:xieyachih@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+ 
+<script>
+  // ---- Tab switching ----
+  var tabButtons = document.querySelectorAll('.tab-btn');
+  var panels = document.querySelectorAll('.explore-panel');
+ 
+  function activateTab(tabName){
+    tabButtons.forEach(function(btn){
+      btn.classList.toggle('active', btn.getAttribute('data-tab') === tabName);
+    });
+    panels.forEach(function(panel){
+      panel.classList.toggle('active', panel.id === 'panel-' + tabName);
+    });
+  }
+ 
+  tabButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      activateTab(btn.getAttribute('data-tab'));
+    });
+  });
+ 
+  // Project card "jump to explore" links also switch the right tab
+  document.querySelectorAll('[data-tab-target]').forEach(function(link){
+    link.addEventListener('click', function(){
+      activateTab(link.getAttribute('data-tab-target'));
+    });
+  });
+ 
+  // ---- Load Tableau embeds once, after DOM is ready ----
+  function loadTableauViz(divId){
+    var divElement = document.getElementById(divId);
+    if(!divElement) return;
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width='100%';
+    vizElement.style.height='100%';
+  }
+ 
+  loadTableauViz('viz_cyclistic');
+  loadTableauViz('viz_river');
+ 
+  var tableauScript = document.createElement('script');
+  tableauScript.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  document.body.appendChild(tableauScript);
+</script>
+ 
+</body>
+</html>
+ 
