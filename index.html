@@ -226,12 +226,9 @@
   .card.placeholder h3{ color:var(--muted); font-size:1.1rem; }
   .card.placeholder p{ max-width:220px; margin:0 auto; }
 
-  /* ---------- EXPLORE SECTION ---------- */
-  .explore-section {
-    padding: 80px 0;
-  }
+  /* ---------- EMBED SECTION ---------- */
   .embed-container {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
   .embed-note{
     font-family:'IBM Plex Mono', monospace;
@@ -245,15 +242,16 @@
   }
   .tableau-frame{
     width:100%;
-    min-height: 600px;
+    height: 600px;
     border:1px solid var(--line);
     border-radius:4px;
     background:var(--surface);
-    position: relative;
     overflow: hidden;
   }
-  @media (max-width: 760px) {
-    .tableau-frame { min-height: 500px; }
+  .tableau-frame iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 
   /* ---------- ABOUT ---------- */
@@ -286,8 +284,6 @@
   .footer-links a:hover{ color:var(--teal); }
   .footer-note{ font-family:'IBM Plex Mono', monospace; font-size:0.75rem; color:var(--muted); }
 </style>
-<!-- Load Tableau API once at the head -->
-<script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
 </head>
 <body>
 
@@ -352,162 +348,4 @@
               <span class="stamp">Data Analytics</span>
               <span class="stamp">Tableau</span>
             </div>
-            <h3>Cyclistic Bike-Share: Member vs Casual Rider Behavior</h3>
-            <p>A capstone analysis of 5.68M bike-share rides, uncovering how annual members and casual riders differ by time, duration, and location — and what that means for converting casual riders into members.</p>
-            <div class="card-stats">
-              <div class="stat"><b>5.68M</b><span>Rides analyzed</span></div>
-              <div class="stat"><b>5</b><span>Dashboard views</span></div>
-              <div class="stat"><b>3</b><span>Recommendations</span></div>
-            </div>
-            <div class="card-links">
-              <a href="https://public.tableau.com/views/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis" target="_blank" rel="noopener">View interactive Story on Tableau Public</a>
-            </div>
-            <div class="card-links" style="border-top:none; padding-top:0; margin-top:6px;">
-              <a href="https://medium.com/@xieyachih/how-does-a-bike-share-navigate-speedy-success-a-cyclistic-case-study-81a707f5a77a" target="_blank" rel="noopener">Read the write-up on Medium</a>
-            </div>
-          </div>
-        </article>
-  
-        <!-- PROJECT 2: River -->
-        <article class="card">
-          <div class="card-thumb">
-            <svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg">
-              <path d="M30 120 Q 100 80 200 120 T 370 100" stroke="#3B6E86" stroke-width="3" fill="none"/>
-              <path d="M30 135 Q 100 95 200 135 T 370 115" stroke="#3B6E86" stroke-width="2" fill="none" opacity="0.5"/>
-              <rect x="50" y="40" width="15" height="80" fill="#C99A3E" opacity="0.8"/>
-              <rect x="80" y="60" width="15" height="60" fill="#C99A3E" opacity="0.8"/>
-              <rect x="110" y="30" width="15" height="90" fill="#C99A3E" opacity="0.8"/>
-              <line x1="20" y1="150" x2="380" y2="150" stroke="#1C2B26" stroke-width="1" opacity="0.15"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <div class="card-tags">
-              <span class="stamp">Data Analytics</span>
-              <span class="stamp">Tableau</span>
-              <span class="stamp">Hydrology</span>
-            </div>
-            <h3>Optimizing Emergency Response Windows: Analyzing Rainfall-Runoff Patterns in Macroom, Ireland</h3>
-            <p>How Hydrological Domain Knowledge and SQL Analytics Can Transform Raw Environmental Data into Actionable Insurance Insights.</p>
-            <div class="card-stats">
-              <div class="stat"><b>2</b><span>years analyzed</span></div>
-              <div class="stat"><b>7</b><span>Dashboard views</span></div>
-              <div class="stat"><b>3</b><span>Recommendations</span></div>
-            </div>
-            <div class="card-links">
-              <a href="https://public.tableau.com/views/RainfallRunoffPattern_v1/RiverLee?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" rel="noopener">View interactive Story on Tableau Public</a>
-            </div>
-            <div class="card-links" style="border-top:none; padding-top:0; margin-top:6px;">
-              <a href="https://medium.com/@xieyachih/how-does-a-bike-share-navigate-speedy-success-a-cyclistic-case-study-81a707f5a77a" target="_blank" rel="noopener">Read the write-up on Medium</a>
-            </div>
-          </div>
-        </article>
-  
-        <!-- PROJECT 3: PLACEHOLDER -->
-        <article class="card placeholder">
-          <div class="card-body">
-            <h3>Next project — in progress</h3>
-            <p>A new analysis is on the way. Check back soon, or reach out for a preview.</p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="explore-section" id="explore">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Explore Projects</h2>
-        <span>Interactive Dashboards · Tableau Public</span>
-      </div>
-
-      <!-- EXPLORE 1: CYCLISTIC -->
-      <div class="embed-container">
-        <div class="embed-note">
-          <strong>Project 1:</strong> Cyclistic Bike-Share: Member vs Casual Rider Behavior Analysis
-        </div>
-        <div class="tableau-frame">
-          <div class='tableauPlaceholder' id='viz_cyclistic' style='position: relative; width:100%; height:600px;'>
-            <object class='tableauViz' style='display:none;'>
-              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-              <param name='embed_code_version' value='3' />
-              <param name='site_root' value='' />
-              <param name='name' value='Cyclistic_CaseStudy_v2&#47;CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis' />
-              <param name='tabs' value='no' />
-              <param name='toolbar' value='yes' />
-              <param name='animate_transition' value='yes' />
-              <param name='display_static_image' value='yes' />
-              <param name='display_spinner' value='yes' />
-              <param name='display_overlay' value='yes' />
-              <param name='display_count' value='yes' />
-              <param name='language' value='en-US' />
-              <param name='filter' value='publish=yes' />
-            </object>
-          </div>
-        </div>
-      </div>
-
-      <!-- EXPLORE 2: RIVER LEE -->
-      <div class="embed-container">
-        <div class="embed-note">
-          <strong>Project 2:</strong> Optimizing Emergency Response Windows: Analyzing Rainfall-Runoff Patterns in Macroom, Ireland
-        </div>
-        <div class="tableau-frame">
-          <div class='tableauPlaceholder' id='viz_riverlee' style='position: relative; width:100%; height:600px;'>
-            <object class='tableauViz' style='display:none;'>
-              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-              <param name='embed_code_version' value='3' />
-              <param name='site_root' value='' />
-              <param name='name' value='RainfallRunoffPattern_v1&#47;RiverLee' />
-              <param name='tabs' value='no' />
-              <param name='toolbar' value='yes' />
-              <param name='animate_transition' value='yes' />
-              <param name='display_static_image' value='yes' />
-              <param name='display_spinner' value='yes' />
-              <param name='display_overlay' value='yes' />
-              <param name='display_count' value='yes' />
-              <param name='language' value='en-US' />
-              <param name='filter' value='publish=yes' />
-            </object>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="about">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>About</h2>
-        <span>Background</span>
-      </div>
-      <div class="about-grid">
-        <div>
-          <p>I trained as an engineer — B.Eng. in Soil and Water Conservation from National Chung Hsing University, Taiwan — with hands-on experience in flood vulnerability mapping, geotechnical site assessment, and hydrological modelling using ArcGIS and QGIS.</p>
-          <p>Since moving into data analytics, I've built out a Google Data Analytics-style skill set: SQL in BigQuery, Python, and Tableau, applied to real datasets like this Cyclistic capstone. I'm currently looking across data analyst and GIS roles based in Ireland.</p>
-        </div>
-        <div class="skills-list">
-          <div class="skills-row"><span>Analytics</span><span>SQL · Tableau · Python · LibreOffice Calc</span></div>
-          <div class="skills-row"><span>GIS</span><span>ArcGIS Pro · QGIS · Spatial Analysis</span></div>
-          <div class="skills-row"><span>Domain</span><span>Water Conservation · EHS · Sustainability</span></div>
-          <div class="skills-row"><span>Languages</span><span>English · 中文 · 日本語</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer id="contact">
-  <div class="wrap">
-    <div class="footer-note">Based in Ireland · Open to Data / GIS / Sustainability roles</div>
-    <div class="footer-links">
-      <a href="http://www.linkedin.com/in/airi-hsieh" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="#" target="_blank" rel="noopener">GitHub</a>
-      <a href="#" target="_blank" rel="noopener">Tableau Public</a>
-      <a href="mailto:xieyachih@gmail.com">Email</a>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+            <h3>Cyclistic Bike-
