@@ -226,9 +226,12 @@
   .card.placeholder h3{ color:var(--muted); font-size:1.1rem; }
   .card.placeholder p{ max-width:220px; margin:0 auto; }
 
-  /* ---------- EMBED SECTION ---------- */
+  /* ---------- EXPLORE SECTION ---------- */
+  .explore-section {
+    padding: 80px 0;
+  }
   .embed-container {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
   }
   .embed-note{
     font-family:'IBM Plex Mono', monospace;
@@ -242,11 +245,15 @@
   }
   .tableau-frame{
     width:100%;
-    aspect-ratio:16/10;
+    min-height: 600px;
     border:1px solid var(--line);
     border-radius:4px;
     background:var(--surface);
+    position: relative;
     overflow: hidden;
+  }
+  @media (max-width: 760px) {
+    .tableau-frame { min-height: 500px; }
   }
 
   /* ---------- ABOUT ---------- */
@@ -279,6 +286,8 @@
   .footer-links a:hover{ color:var(--teal); }
   .footer-note{ font-family:'IBM Plex Mono', monospace; font-size:0.75rem; color:var(--muted); }
 </style>
+<!-- Load Tableau API once at the head -->
+<script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
 </head>
 <body>
 
@@ -405,7 +414,7 @@
     </div>
   </section>
 
-  <section class="section" id="explore" style="padding-top:0;">
+  <section class="explore-section" id="explore">
     <div class="wrap">
       <div class="section-head">
         <h2>Explore Projects</h2>
@@ -418,20 +427,14 @@
           <strong>Project 1:</strong> Cyclistic Bike-Share: Member vs Casual Rider Behavior Analysis
         </div>
         <div class="tableau-frame">
-          <div class='tableauPlaceholder' id='viz1783349665230' style='position: relative; width:100%; height:100%;'>
-            <noscript>
-              <a href='https://public.tableau.com/views/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis'>
-                <img alt='Cyclistic Bike-Share: Member vs Casual Rider Behavior Analysis ' src='https://public.tableau.com/static/images/Cy/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis/1_rss.png' style='border: none; width:100%; height:100%; object-fit:contain;' />
-              </a>
-            </noscript>
-            <object class='tableauViz' style='display:none; width:100%; height:100%;'>
+          <div class='tableauPlaceholder' id='viz_cyclistic' style='position: relative; width:100%; height:600px;'>
+            <object class='tableauViz' style='display:none;'>
               <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
               <param name='embed_code_version' value='3' />
               <param name='site_root' value='' />
               <param name='name' value='Cyclistic_CaseStudy_v2&#47;CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis' />
               <param name='tabs' value='no' />
               <param name='toolbar' value='yes' />
-              <param name='static_image' value='https://public.tableau.com/static/images/Cy/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis/1.png' />
               <param name='animate_transition' value='yes' />
               <param name='display_static_image' value='yes' />
               <param name='display_spinner' value='yes' />
@@ -450,20 +453,14 @@
           <strong>Project 2:</strong> Optimizing Emergency Response Windows: Analyzing Rainfall-Runoff Patterns in Macroom, Ireland
         </div>
         <div class="tableau-frame">
-          <div class='tableauPlaceholder' id='vizRiverLee' style='position: relative; width:100%; height:100%;'>
-            <noscript>
-              <a href='https://public.tableau.com/views/RainfallRunoffPattern_v1/RiverLee'>
-                <img alt='Rainfall Runoff Pattern_v1' src='https://public.tableau.com/static/images/Ra/RainfallRunoffPattern_v1/RiverLee/1_rss.png' style='border: none; width:100%; height:100%; object-fit:contain;' />
-              </a>
-            </noscript>
-            <object class='tableauViz' style='display:none; width:100%; height:100%;'>
+          <div class='tableauPlaceholder' id='viz_riverlee' style='position: relative; width:100%; height:600px;'>
+            <object class='tableauViz' style='display:none;'>
               <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
               <param name='embed_code_version' value='3' />
               <param name='site_root' value='' />
               <param name='name' value='RainfallRunoffPattern_v1&#47;RiverLee' />
               <param name='tabs' value='no' />
               <param name='toolbar' value='yes' />
-              <param name='static_image' value='https://public.tableau.com/static/images/Ra/RainfallRunoffPattern_v1/RiverLee/1.png' />
               <param name='animate_transition' value='yes' />
               <param name='display_static_image' value='yes' />
               <param name='display_spinner' value='yes' />
@@ -475,21 +472,6 @@
           </div>
         </div>
       </div>
-
-      <script type='text/javascript'>
-        function loadTableau(id) {
-          var divElement = document.getElementById(id);
-          var vizElement = divElement.getElementsByTagName('object')[0];
-          vizElement.style.width='100%';
-          vizElement.style.height='100%';
-          var scriptElement = document.createElement('script');
-          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-          vizElement.parentNode.insertBefore(scriptElement, scriptElement);
-        }
-        
-        loadTableau('viz1783349665230');
-        loadTableau('vizRiverLee');
-      </script>
     </div>
   </section>
 
