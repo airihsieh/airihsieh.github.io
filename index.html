@@ -227,6 +227,9 @@
   .card.placeholder p{ max-width:220px; margin:0 auto; }
 
   /* ---------- EMBED SECTION ---------- */
+  .embed-container {
+    margin-bottom: 60px;
+  }
   .embed-note{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.78rem;
@@ -243,6 +246,7 @@
     border:1px solid var(--line);
     border-radius:4px;
     background:var(--surface);
+    overflow: hidden;
   }
 
   /* ---------- ABOUT ---------- */
@@ -283,6 +287,7 @@
     <div class="brand">Airi</div>
     <div class="nav-links">
       <a href="#projects">Projects</a>
+      <a href="#explore">Explore</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
@@ -358,13 +363,11 @@
         <article class="card">
           <div class="card-thumb">
             <svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg">
-              <rect x="30" y="90" width="26" height="60" fill="#C9CDC6"/>
-              <rect x="66" y="80" width="26" height="70" fill="#C9CDC6"/>
-              <rect x="102" y="70" width="26" height="80" fill="#3B6E86"/>
-              <rect x="138" y="60" width="26" height="90" fill="#3B6E86"/>
-              <rect x="174" y="50" width="26" height="100" fill="#3B6E86"/>
-              <rect x="210" y="55" width="26" height="95" fill="#C99A3E"/>
-              <rect x="246" y="40" width="26" height="110" fill="#C99A3E"/>
+              <path d="M30 120 Q 100 80 200 120 T 370 100" stroke="#3B6E86" stroke-width="3" fill="none"/>
+              <path d="M30 135 Q 100 95 200 135 T 370 115" stroke="#3B6E86" stroke-width="2" fill="none" opacity="0.5"/>
+              <rect x="50" y="40" width="15" height="80" fill="#C99A3E" opacity="0.8"/>
+              <rect x="80" y="60" width="15" height="60" fill="#C99A3E" opacity="0.8"/>
+              <rect x="110" y="30" width="15" height="90" fill="#C99A3E" opacity="0.8"/>
               <line x1="20" y1="150" x2="380" y2="150" stroke="#1C2B26" stroke-width="1" opacity="0.15"/>
             </svg>
           </div>
@@ -372,6 +375,7 @@
             <div class="card-tags">
               <span class="stamp">Data Analytics</span>
               <span class="stamp">Tableau</span>
+              <span class="stamp">Hydrology</span>
             </div>
             <h3>Optimizing Emergency Response Windows: Analyzing Rainfall-Runoff Patterns in Macroom, Ireland</h3>
             <p>How Hydrological Domain Knowledge and SQL Analytics Can Transform Raw Environmental Data into Actionable Insurance Insights.</p>
@@ -389,7 +393,7 @@
           </div>
         </article>
   
-        <!-- PROJECT 2: PLACEHOLDER -->
+        <!-- PROJECT 3: PLACEHOLDER -->
         <article class="card placeholder">
           <div class="card-body">
             <h3>Next project — in progress</h3>
@@ -401,54 +405,91 @@
     </div>
   </section>
 
-  <section class="section" style="padding-top:0;">
+  <section class="section" id="explore" style="padding-top:0;">
     <div class="wrap">
       <div class="section-head">
-        <h2>Explore: Cyclistic Story</h2>
-        <span>Interactive · Tableau Public</span>
+        <h2>Explore Projects</h2>
+        <span>Interactive Dashboards · Tableau Public</span>
       </div>
-      <div class="embed-note">
-        Replace the placeholder below with your published Tableau Public embed code (Share → Embed Code) once the workbook is live.
-      </div>
-      <div class="tableau-frame">
-        <div class='tableauPlaceholder' id='viz1783349665230' style='position: relative; width:100%; height:100%;'>
-          <noscript>
-            <a href='https://public.tableau.com/views/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis'>
-              <img alt='Cyclistic Bike-Share: Member vs Casual Rider Behavior Analysis ' src='https://public.tableau.com/static/images/Cy/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis/1_rss.png' style='border: none; width:100%; height:100%; object-fit:contain;' />
-            </a>
-          </noscript>
-          <object class='tableauViz' style='display:none; width:100%; height:100%;'>
-            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-            <param name='embed_code_version' value='3' />
-            <param name='site_root' value='' />
-            <param name='name' value='Cyclistic_CaseStudy_v2&#47;CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis' />
-            <param name='tabs' value='no' />
-            <param name='toolbar' value='yes' />
-            <param name='static_image' value='https://public.tableau.com/static/images/Cy/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis/1.png' />
-            <param name='animate_transition' value='yes' />
-            <param name='display_static_image' value='yes' />
-            <param name='display_spinner' value='yes' />
-            <param name='display_overlay' value='yes' />
-            <param name='display_count' value='yes' />
-            <param name='language' value='en-US' />
-            <param name='filter' value='publish=yes' />
-          </object>
+
+      <!-- EXPLORE 1: CYCLISTIC -->
+      <div class="embed-container">
+        <div class="embed-note">
+          <strong>Project 1:</strong> Cyclistic Bike-Share: Member vs Casual Rider Behavior Analysis
         </div>
-        <script type='text/javascript'>
-          var divElement = document.getElementById('viz1783349665230');
+        <div class="tableau-frame">
+          <div class='tableauPlaceholder' id='viz1783349665230' style='position: relative; width:100%; height:100%;'>
+            <noscript>
+              <a href='https://public.tableau.com/views/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis'>
+                <img alt='Cyclistic Bike-Share: Member vs Casual Rider Behavior Analysis ' src='https://public.tableau.com/static/images/Cy/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis/1_rss.png' style='border: none; width:100%; height:100%; object-fit:contain;' />
+              </a>
+            </noscript>
+            <object class='tableauViz' style='display:none; width:100%; height:100%;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='Cyclistic_CaseStudy_v2&#47;CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Cy/Cyclistic_CaseStudy_v2/CyclisticBike-ShareMembervsCasualRiderBehaviorAnalysis/1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='en-US' />
+              <param name='filter' value='publish=yes' />
+            </object>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPLORE 2: RIVER LEE -->
+      <div class="embed-container">
+        <div class="embed-note">
+          <strong>Project 2:</strong> Optimizing Emergency Response Windows: Analyzing Rainfall-Runoff Patterns in Macroom, Ireland
+        </div>
+        <div class="tableau-frame">
+          <div class='tableauPlaceholder' id='vizRiverLee' style='position: relative; width:100%; height:100%;'>
+            <noscript>
+              <a href='https://public.tableau.com/views/RainfallRunoffPattern_v1/RiverLee'>
+                <img alt='Rainfall Runoff Pattern_v1' src='https://public.tableau.com/static/images/Ra/RainfallRunoffPattern_v1/RiverLee/1_rss.png' style='border: none; width:100%; height:100%; object-fit:contain;' />
+              </a>
+            </noscript>
+            <object class='tableauViz' style='display:none; width:100%; height:100%;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='RainfallRunoffPattern_v1&#47;RiverLee' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Ra/RainfallRunoffPattern_v1/RiverLee/1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='en-US' />
+              <param name='filter' value='publish=yes' />
+            </object>
+          </div>
+        </div>
+      </div>
+
+      <script type='text/javascript'>
+        function loadTableau(id) {
+          var divElement = document.getElementById(id);
           var vizElement = divElement.getElementsByTagName('object')[0];
-          if ( divElement.offsetWidth > 800 ) { 
-            vizElement.style.width='100%';vizElement.style.height='100%';
-          } else if ( divElement.offsetWidth > 500 ) { 
-            vizElement.style.width='100%';vizElement.style.height='100%';
-          } else { 
-            vizElement.style.width='100%';vizElement.style.height='100%';
-          }
+          vizElement.style.width='100%';
+          vizElement.style.height='100%';
           var scriptElement = document.createElement('script');
           scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
           vizElement.parentNode.insertBefore(scriptElement, scriptElement);
-        </script>
-      </div>
+        }
+        
+        loadTableau('viz1783349665230');
+        loadTableau('vizRiverLee');
+      </script>
     </div>
   </section>
 
