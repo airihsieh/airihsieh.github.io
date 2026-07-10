@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art Gallery — Airi</title>
+<style>
+  :root {
+    --paper: #eae3d6;
+    --card: #f6f2e8;
+    --ink: #2a2823;
+    --ink-soft: #6b6558;
+    --teal: #34535a;
+    --stamp: #b5392c;
+    --line: #d6cdb8;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+  }
+
+  header {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 56px 24px 20px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    margin-bottom: 28px;
+  }
+
+  .back-link:hover { color: var(--ink); }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 1.5px solid var(--stamp);
+    display: inline-block;
+  }
+
+  h1 {
+    font-family: Georgia, "Noto Serif TC", serif;
+    font-size: clamp(30px, 5vw, 46px);
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .sub {
+    max-width: 560px;
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 20px 24px 100px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  figure {
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--line);
+    cursor: pointer;
+  }
+
+  figure img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  figure:hover img { transform: scale(1.04); }
+
+  figcaption {
+    padding: 14px 16px 16px;
+  }
+
+  figcaption .tag {
+    display: inline-block;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: rgba(52, 83, 90, 0.1);
+    padding: 3px 9px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+
+  figcaption .title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  figcaption .year {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 18, 14, 0.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    z-index: 100;
+  }
+
+  .lightbox.open { display: flex; }
+
+  .lightbox-inner {
+    max-width: 920px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .lightbox img {
+    width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #111;
+  }
+
+  .lightbox-info { color: #f2ede1; }
+
+  .lightbox-info .tag {
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #cfd9da;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .lightbox-info .title {
+    font-family: Georgia, "Noto Serif TC", serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .lightbox-info .desc {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: #d8d2c4;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    background: none;
+    border: none;
+    color: #f2ede1;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #f2ede1;
+    font-size: 34px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .lightbox-prev { left: 12px; }
+  .lightbox-next { right: 12px; }
+
+  @media (max-width: 860px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .lightbox-inner { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    header { padding: 40px 18px 16px; }
+    main { padding: 16px 18px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html#art-gallery" class="back-link">← 回到 Portfolio</a>
+  <div class="eyebrow">Illustration &amp; Design</div>
+  <h1>Art Gallery</h1>
+  <p class="sub">
+    海報、角色設定與公共議題插畫作品。多數作品來自淬慮 Tsuilu 公共議題促進協會的工作坊視覺製作。
+  </p>
+</header>
+
+<main>
+  <div class="grid" id="gallery-grid"></div>
+</main>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">&#8249;</button>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">&#8250;</button>
+  <div class="lightbox-inner">
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-info">
+      <span class="tag" id="lightbox-tag"></span>
+      <div class="title" id="lightbox-title"></div>
+      <div class="desc" id="lightbox-desc"></div>
+    </div>
+  </div>
+</div>
+
+<script src="gallery-data.js"></script>
+<script>
+  var grid = document.getElementById("gallery-grid");
+  var current = 0;
+
+  function renderGrid() {
+    grid.innerHTML = "";
+    artworks.forEach(function (art, i) {
+      var fig = document.createElement("figure");
+      fig.innerHTML =
+        '<img src="' + art.src + '" alt="' + art.title + '" loading="lazy">' +
+        '<figcaption>' +
+        '<span class="tag">' + art.tag + '</span>' +
+        '<div class="title">' + art.title + '</div>' +
+        '<div class="year">' + art.year + '</div>' +
+        '</figcaption>';
+      fig.addEventListener("click", function () { openLightbox(i); });
+      grid.appendChild(fig);
+    });
+  }
+
+  var lightbox = document.getElementById("lightbox");
+
+  function openLightbox(i) {
+    current = i;
+    var art = artworks[i];
+    document.getElementById("lightbox-img").src = art.src;
+    document.getElementById("lightbox-img").alt = art.title;
+    document.getElementById("lightbox-tag").textContent = art.tag + " · " + art.year;
+    document.getElementById("lightbox-title").textContent = art.title;
+    document.getElementById("lightbox-desc").textContent = art.desc || "";
+    lightbox.classList.add("open");
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+  }
+
+  document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
+  document.getElementById("lightbox-prev").addEventListener("click", function () {
+    openLightbox((current - 1 + artworks.length) % artworks.length);
+  });
+  document.getElementById("lightbox-next").addEventListener("click", function () {
+    openLightbox((current + 1) % artworks.length);
+  });
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (!lightbox.classList.contains("open")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") openLightbox((current - 1 + artworks.length) % artworks.length);
+    if (e.key === "ArrowRight") openLightbox((current + 1) % artworks.length);
+  });
+
+  renderGrid();
+</script>
+
+</body>
+</html>
