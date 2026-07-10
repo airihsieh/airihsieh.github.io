@@ -20,20 +20,41 @@
 
 const artworks = [
   {
-    src: "assets/img/gallery/tsuilu-wormhole-poster.jpg",
-    title: "《蟲洞》白色恐怖工作坊 主視覺海報",
-    tag: "海報設計",
-    year: "2026",
+    src: "assets/img/gallery/tsuilu_wormhole_6th_poster.jpg",
+    title: "《蟲洞》6th 白色恐怖工作坊 主視覺海報",
+    tag: "Poster",
+    year: "2025",
     desc: "為淬慮 Tsuilu 公共議題促進協會第六屆「蟲洞．白色恐怖工作坊」繪製的主視覺海報，以島嶼意象串聯白色恐怖歷史場景。"
   },
   {
-    src: "assets/img/gallery/zhong-dahu-character.jpg",
+    src: "assets/img/gallery/tsuilu_wormhole_5th_poster.jpg",
+    title: "《蟲洞》5th 白色恐怖工作坊 主視覺海報",
+    tag: "Poster",
+    year: "2024",
+    desc: "為淬慮 Tsuilu 公共議題促進協會第五屆「蟲洞．白色恐怖工作坊」繪製的主視覺海報，以農民運動過程的意象。"
+  },
+  {
+    src: "assets/img/gallery/farmer.jpg",
     title: "角色設定｜佃農 鐘大虎",
-    tag: "角色插畫",
-    year: "2026",
-    desc: "《蟲洞》工作坊角色卡設定，描繪日殖昭和時期一名佃農的生命史，作為工作坊角色扮演素材之一。"
-  }
-
+    tag: "Prop",
+    year: "2022",
+    desc: "《記憶二度色》體驗工作坊角色卡設定，日殖昭和時期一名佃農。"
+  },
+  {
+    src: "assets/img/gallery/police.jpg",
+    title: "角色設定｜警察 大山順良",
+    tag: "Prop",
+    year: "2022",
+    desc: "《記憶二度色》體驗工作坊角色卡設定，日殖昭和時期一名警察。"
+  },
+  {
+    src: "assets/img/gallery/landlord.jpg",
+    title: "角色設定｜地主 廖文榮",
+    tag: "Prop",
+    year: "2022",
+    desc: "《記憶二度色》體驗工作坊角色卡設定，日殖昭和時期一名地主。"
+  },
+  
   // 之後新增作品，往這裡繼續加，例如：
   // ,{
   //   src: "assets/img/gallery/your-new-file.jpg",
