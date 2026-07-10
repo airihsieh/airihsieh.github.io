@@ -558,7 +558,209 @@
     </div>
   </section>
 </main>
+<!--
+  ============================================================
+  ART GALLERY 
+  ============================================================
+  記得把 <script src="gallery-data.js"> 的路徑改成你實際放檔案的位置
+（如果 gallery-data.js 跟 index.html 放在同一層資料夾，不用改）
+<!-- 從這裡開始 -->
+<section id="art-gallery" class="agz-section">
+  <style>
+    #art-gallery.agz-section {
+      --agz-paper: #eae3d6;
+      --agz-card: #f6f2e8;
+      --agz-ink: #2a2823;
+      --agz-ink-soft: #6b6558;
+      --agz-teal: #34535a;
+      --agz-stamp: #b5392c;
+      --agz-line: #d6cdb8;
 
+      background: var(--agz-paper);
+      color: var(--agz-ink);
+      padding: 96px 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+    }
+
+    #art-gallery .agz-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    #art-gallery .agz-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--agz-ink-soft);
+      margin-bottom: 18px;
+    }
+
+    #art-gallery .agz-eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: 1.5px solid var(--agz-stamp);
+      display: inline-block;
+    }
+
+    #art-gallery h2 {
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 600;
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+    }
+
+    #art-gallery .agz-sub {
+      max-width: 560px;
+      color: var(--agz-ink-soft);
+      font-size: 15.5px;
+      line-height: 1.7;
+      margin: 0 0 44px;
+    }
+
+    #art-gallery .agz-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    #art-gallery .agz-card {
+      position: relative;
+      display: block;
+      aspect-ratio: 3 / 4;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--agz-card);
+      border: 1px solid var(--agz-line);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #art-gallery .agz-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    #art-gallery .agz-card:hover img {
+      transform: scale(1.045);
+    }
+
+    #art-gallery .agz-card-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 14px 14px 12px;
+      background: linear-gradient(to top, rgba(20, 18, 14, 0.82), rgba(20, 18, 14, 0));
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #art-gallery .agz-card:hover .agz-card-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #art-gallery .agz-actions {
+      display: flex;
+      justify-content: center;
+    }
+
+    #art-gallery .agz-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 999px;
+      border: 1.5px solid var(--agz-ink);
+      color: var(--agz-ink);
+      font-size: 14.5px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    #art-gallery .agz-btn:hover {
+      background: var(--agz-ink);
+      color: var(--agz-paper);
+    }
+
+    #art-gallery .agz-btn svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    @media (max-width: 860px) {
+      #art-gallery .agz-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      #art-gallery.agz-section {
+        padding: 64px 18px;
+      }
+      #art-gallery .agz-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+    }
+  </style>
+
+  <div class="agz-inner">
+    <div class="agz-eyebrow">Illustration &amp; Design</div>
+    <h2>Art Gallery</h2>
+    <p class="agz-sub">
+      除了資料分析與工程專案，我也長期參與海報與角色插畫設計，
+      多數作品來自淬慮 Tsuilu 公共議題促進協會的公共議題工作坊視覺製作。
+    </p>
+
+    <div class="agz-grid" id="agz-preview-grid">
+      <!-- 卡片由 JS 自動產生，不用手動加 -->
+    </div>
+
+    <div class="agz-actions">
+      <a href="gallery.html" class="agz-btn">
+        查看全部作品
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 這行負責讀取作品清單，路徑要跟 gallery-data.js 實際位置一致 -->
+<script src="gallery-data.js"></script>
+<script>
+  (function () {
+    var grid = document.getElementById("agz-preview-grid");
+    if (!grid || typeof artworks === "undefined") return;
+
+    var previewCount = 4; // 首頁預覽最多顯示幾張，其餘的在「查看全部作品」裡
+    artworks.slice(0, previewCount).forEach(function (art) {
+      var card = document.createElement("a");
+      card.className = "agz-card";
+      card.href = "gallery.html";
+      card.innerHTML =
+        '<img src="' + art.src + '" alt="' + art.title + '" loading="lazy">' +
+        '<div class="agz-card-caption">' + art.title + "</div>";
+      grid.appendChild(card);
+    });
+  })();
+</script>
+<!-- 到這裡結束 -->
 <footer id="contact">
   <div class="wrap">
     <div class="footer-note">Based in Ireland</div>
