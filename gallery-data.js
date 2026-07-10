@@ -29,7 +29,7 @@ const artworks = [
     desc: "為淬慮 Tsuilu 公共議題促進協會第六屆「蟲洞．白色恐怖工作坊」繪製的主視覺海報，以島嶼意象串聯白色恐怖歷史場景。"
   },
   {
-    src: "assets/img/gallery/tsuilu_wormhole_5th_poster.jpg",
+    src: "assets/img/gallery/tsuilu_wormhole_5th_poster.JPG",
     title: "《蟲洞》5th 白色恐怖工作坊 主視覺海報",
     tag: "Poster",
     year: "2024",
