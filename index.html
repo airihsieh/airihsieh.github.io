@@ -561,10 +561,11 @@
 </main>
 <!--
   ============================================================
-  ART GALLERY 
+  ART GALLERY 區塊
   ============================================================
-  記得把 <script src="gallery-data.js"> 的路徑改成你實際放檔案的位置
-（如果 gallery-data.js 跟 index.html 放在同一層資料夾，不用改）
+   <script src="gallery-data.js"> 的路徑改成你實際放檔案的位置
+     （如果 gallery-data.js 跟 index.html 放在同一層資料夾，不用改）
+
 <!-- 從這裡開始 -->
 <section id="art-gallery" class="agz-section">
   <style>
@@ -725,7 +726,7 @@
     <div class="agz-eyebrow">Illustration &amp; Design</div>
     <h2>Art Gallery</h2>
     <p class="agz-sub">
-      I enjoy visual design and illustration. Alongside my personal projects, I have also been creating posters and event visuals for Tsuilu, a Taiwan-based NGO dedicated to promoting public engagement and social issues. 
+      I enjoy visual design and illustration. Alongside my personal projects, I have also been creating posters and event visuals for Tsuilu, a Taiwan-based NGO dedicated to promoting public engagement and social issues. <br>
       Feel free to explore my gallery and take a look at my work!🌟
     </p>
 
@@ -755,7 +756,7 @@
       card.className = "agz-card";
       card.href = "gallery.html";
       card.innerHTML =
-        '<img src="' + art.src + '" alt="' + art.title + '" loading="lazy">' +
+        '<img src="' + resizedImg(art.src, 500, 75) + '" alt="' + art.title + '" loading="lazy" decoding="async">' +
         '<div class="agz-card-caption">' + art.title + "</div>";
       grid.appendChild(card);
     });
