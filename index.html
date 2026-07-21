@@ -358,7 +358,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Projects</h2>
-        <span>02 live · more in progress</span>
+        <span>03 live · more in progress</span>
       </div>
 
       <div class="projects">
@@ -443,8 +443,38 @@
             </div>
           </div>
         </article>
+        
+        <!-- PROJECT 3: CAMPAIGN & CHANNEL EFFECTIVENESS -->
+        <article class="card">
+          <div class="card-thumb">
+            <svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="200" cy="85" r="62" fill="none" stroke="#1C2B26" stroke-opacity="0.08" stroke-width="1"/>
+              <path d="M200,85 L200,25 A60,60 0 0,1 248.5,120.3 Z" fill="#3B6E86"/>
+              <path d="M200,85 L248.5,120.3 A60,60 0 0,1 164.7,133.5 Z" fill="#C99A3E"/>
+              <path d="M200,85 L164.7,133.5 A60,60 0 0,1 151.5,49.7 Z" fill="#445E4B"/>
+              <path d="M200,85 L151.5,49.7 A60,60 0 0,1 200,25 Z" fill="#C9CDC6"/>
+              <circle cx="200" cy="85" r="60" fill="none" stroke="#F1F3ED" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="stamp">Data Analytics</span>
+              <span class="stamp">Tableau</span>
+            </div>
+            <h3>Campaign & Channel Effectiveness Analysis for New Customer Acquisition</h3>
+            <p>An analysis of marketing campaign and channel performance to identify which acquisition channels most effectively convert new customers.</p>
+            <div class="card-stats">
+              <div class="stat"><b>2</b><span>Campaigns analyzed</span></div>
+              <div class="stat"><b>3</b><span>Channels compared</span></div>
+              <div class="stat"><b>1</b><span>Recommendations</span></div>
+            </div>
+            <div class="card-links jump">
+              <a href="#explore" data-tab-target="campaign">View interactive Story below ↓</a>
+            </div>
+          </div>
+        </article>
 
-        <!-- PROJECT 3: PLACEHOLDER -->
+        <!-- PROJECT 4: PLACEHOLDER -->
         <article class="card placeholder">
           <div class="card-body">
             <h3>Next project — in progress</h3>
@@ -466,6 +496,7 @@
       <div class="explore-tabs">
         <button class="tab-btn active" data-tab="cyclistic">Cyclistic Bike-Share</button>
         <button class="tab-btn" data-tab="river">River Lee Flood Risk</button>
+        <button class="tab-btn" data-tab="campaign">Campaign & Channel Effectiveness</button>
       </div>
 
       <!-- PANEL 1: CYCLISTIC -->
@@ -530,6 +561,37 @@
         </div>
         <div class="panel-links">
           <a href="https://public.tableau.com/views/RainfallRunoffPattern_v1/RiverLee?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" rel="noopener">Open full-screen on Tableau Public →</a>
+        </div>
+      </div>
+      <!-- PANEL 3: CAMPAIGN & CHANNEL EFFECTIVENESS -->
+      <div class="explore-panel" id="panel-campaign">
+        <h3>Campaign &amp; Channel Effectiveness Analysis for New Customer Acquisition</h3>
+        <div class="tableau-frame" style="aspect-ratio:1016/991;">
+          <div class='tableauPlaceholder' id='viz_campaign' style='position: relative; width:100%; height:100%;'>
+            <noscript>
+              <a href='https://public.tableau.com/views/CampaignChannelEffectivenessAnalysisforNewCustomerAcquisition/Story1'>
+                <img alt='Campaign &amp; Channel Effectiveness Analysis for New Customer Acquisition' src='https://public.tableau.com/static/images/Ca/CampaignChannelEffectivenessAnalysisforNewCustomerAcquisition/Story1/1_rss.png' style='border: none; width:100%; height:100%; object-fit:contain;' />
+              </a>
+            </noscript>
+            <object class='tableauViz' style='display:none; width:100%; height:100%;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='CampaignChannelEffectivenessAnalysisforNewCustomerAcquisition&#47;Story1' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Ca/CampaignChannelEffectivenessAnalysisforNewCustomerAcquisition/Story1/1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='en-US' />
+            </object>
+          </div>
+        </div>
+        <div class="panel-links">
+          <a href="https://public.tableau.com/views/CampaignChannelEffectivenessAnalysisforNewCustomerAcquisition/Story1" target="_blank" rel="noopener">Open full Story on Tableau Public →</a>
         </div>
       </div>
 
@@ -812,6 +874,7 @@
 
   loadTableauViz('viz_cyclistic');
   loadTableauViz('viz_river');
+  loadTableauViz('viz_campaign');
 
   var tableauScript = document.createElement('script');
   tableauScript.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
