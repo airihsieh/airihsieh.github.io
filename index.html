@@ -316,6 +316,106 @@
   .footer-links a{ color:var(--muted); }
   .footer-links a:hover{ color:var(--teal); }
   .footer-note{ font-family:'IBM Plex Mono', monospace; font-size:0.75rem; color:var(--muted); }
+  /* ============ Forage Job Simulations section ============ */
+#forage-sims{
+  max-width: 1080px;   /* 建議跟你 Projects 區塊的 max-width 保持一致 */
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+.fs-eyebrow{
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.fs-heading{
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+.fs-sub{
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 0 40px;
+}
+.fs-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.fs-card{
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.fs-card:hover{
+  box-shadow: 0 10px 30px rgba(15,107,100,0.12);
+  transform: translateY(-2px);
+}
+.fs-media{
+  background: var(--panel);
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.fs-media img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.fs-media.fs-text-only{ flex-direction: column; gap: 8px; color: var(--muted); }
+.fs-media.fs-text-only svg{ width: 32px; height: 32px; opacity: 0.5; }
+.fs-media.fs-text-only span{ font-size: 0.78rem; letter-spacing: 0.04em; }
+.fs-gallery-count{
+  position: absolute; bottom: 8px; right: 8px;
+  background: rgba(20,30,28,0.72); color: #fff;
+  font-size: 0.7rem; padding: 3px 8px; border-radius: 20px;
+}
+.fs-play-badge{
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(10,20,18,0.0);
+  transition: background 0.2s ease;
+}
+.fs-card:hover .fs-play-badge{ background: rgba(10,20,18,0.15); }
+.fs-play-badge svg{ width: 40px; height: 40px; opacity: 0; transition: opacity 0.2s ease; }
+.fs-card:hover .fs-play-badge svg{ opacity: 1; }
+.fs-body{ padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+.fs-org-row{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.fs-org{
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--teal-deep);
+}
+.fs-badge{
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  background: var(--panel); color: var(--muted);
+  padding: 2px 8px; border-radius: 20px; border: 1px solid var(--line);
+}
+.fs-title{ font-size: 1.02rem; font-weight: 600; margin: 0 0 8px; line-height: 1.35; }
+.fs-desc{ font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin: 0 0 14px; flex: 1; }
+.fs-tags{ display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.fs-tags span{
+  font-size: 0.68rem; background: var(--panel); color: var(--ink, #1b2430);
+  padding: 3px 8px; border-radius: 5px; border: 1px solid var(--line);
+}
+.fs-link{
+  font-size: 0.82rem; font-weight: 600; color: var(--teal);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+}
+.fs-link:hover{ text-decoration: underline; }
+.fs-link.disabled{ color: var(--muted); pointer-events: none; }
+
+@media (max-width: 720px){
+  .fs-grid{ grid-template-columns: 1fr; }
+}
+  
 </style>
 </head>
 <body>
@@ -325,6 +425,7 @@
     <div class="brand">Airi</div>
     <div class="nav-links">
       <a href="#projects">Projects</a>
+      <a href="#forage-sims">Simulations</a>
       <a href="#explore">Explore</a>
       <a href="#about">About</a>
       <a href="#art-gallery">Art Gallery</a>
@@ -485,7 +586,115 @@
       </div>
     </div>
   </section>
-
+  
+  <!--Job Simulations -->
+  <section id="forage-sims">
+    <div class="fs-eyebrow">Professional Development</div>
+    <h2 class="fs-heading">Industry Job Simulations</h2>
+    <p class="fs-sub">
+      Guided, real-world simulations completed via Forage — practicing the analytical and consulting workflows used by
+      each company's actual teams. Unlike the case studies above, these follow a structured brief rather than an
+      independent research question.
+    </p>
+  
+    <div class="fs-grid">
+  
+      <!-- Tata -->
+      <div class="fs-card">
+        <a class="fs-media" href="https://public.tableau.com/views/2011SalesPerformanceReviewTrendsMarketsGrowthOpportunities/Story1" target="_blank" rel="noopener">
+          <img src="assets/forage/tata-thumbnail.png" alt="Tata Data Visualisation dashboard preview">
+          <div class="fs-play-badge">
+            <svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="11" fill="rgba(15,107,100,0.85)"/><path d="M9 7l8 5-8 5V7z" fill="white"/></svg>
+          </div>
+        </a>
+        <div class="fs-body">
+          <div class="fs-org-row">
+            <span class="fs-org">Tata Consultancy Services</span>
+            <span class="fs-badge">Forage</span>
+          </div>
+          <h3 class="fs-title">Data Visualisation: Empowering Business with Effective Insights</h3>
+          <p class="fs-desc">Built executive-ready visuals for a retail client's sales performance data, and prepared discussion questions for a senior leadership review.</p>
+          <div class="fs-tags"><span>Tableau</span><span>Power BI</span><span>Data Storytelling</span></div>
+          <a class="fs-link" href="https://public.tableau.com/views/2011SalesPerformanceReviewTrendsMarketsGrowthOpportunities/Story1" target="_blank" rel="noopener">Open interactive dashboard →</a>
+        </div>
+      </div>
+  
+      <!-- BCG -->
+      <div class="fs-card">
+        <a class="fs-media" href="https://public.tableau.com/views/CampaignChannelEffectivenessAnalysisforNewCustomerAcquisition/Story1" target="_blank" rel="noopener">
+          <img src="https://public.tableau.com/static/images/Ca/CampaignChannelEffectivenessAnalysisforNewCustomerAcquisition/Story1/1_rss.png" alt="BCG campaign effectiveness dashboard preview">
+          <div class="fs-play-badge">
+            <svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="11" fill="rgba(15,107,100,0.85)"/><path d="M9 7l8 5-8 5V7z" fill="white"/></svg>
+          </div>
+        </a>
+        <div class="fs-body">
+          <div class="fs-org-row">
+            <span class="fs-org">Boston Consulting Group</span>
+            <span class="fs-badge">Forage</span>
+          </div>
+          <h3 class="fs-title">Campaign &amp; Channel Effectiveness for New Customer Acquisition</h3>
+          <p class="fs-desc">Analyzed campaign performance by channel to recommend the most effective strategy for converting new customers, delivered as a client-ready memo.</p>
+          <div class="fs-tags"><span>Excel</span><span>Tableau</span><span>Client Communication</span></div>
+          <a class="fs-link" href="https://public.tableau.com/views/CampaignChannelEffectivenessAnalysisforNewCustomerAcquisition/Story1" target="_blank" rel="noopener">Open interactive dashboard →</a>
+        </div>
+      </div>
+  
+      <!-- Quantium -->
+      <div class="fs-card">
+        <a class="fs-media" href="assets/forage/quantium-1.png" target="_blank" rel="noopener">
+          <img src="assets/forage/quantium-1.png" alt="Quantium category review chart preview">
+          <span class="fs-gallery-count">4 charts</span>
+        </a>
+        <div class="fs-body">
+          <div class="fs-org-row">
+            <span class="fs-org">Quantium</span>
+            <span class="fs-badge">Forage</span>
+          </div>
+          <h3 class="fs-title">Category Review: Chips — Customer Analytics &amp; Trial Store Testing</h3>
+          <p class="fs-desc">Cleaned 260K+ transaction records in SQL, segmented customers by lifestage, and ran statistical testing to identify the best-matched control stores for a trial uplift analysis.</p>
+          <div class="fs-tags"><span>SQL</span><span>Python</span><span>Statistical Testing</span></div>
+          <a class="fs-link" href="assets/forage/quantium-1.png" target="_blank" rel="noopener">View chart gallery →</a>
+        </div>
+      </div>
+  
+      <!-- Deloitte -->
+      <div class="fs-card">
+        <a class="fs-media" href="assets/forage/deloitte-dashboard.png" target="_blank" rel="noopener">
+          <img src="assets/forage/deloitte-dashboard.png" alt="Deloitte forensic technology dashboard screenshot">
+        </a>
+        <div class="fs-body">
+          <div class="fs-org-row">
+            <span class="fs-org">Deloitte Australia</span>
+            <span class="fs-badge">Forage</span>
+          </div>
+          <h3 class="fs-title">Forensic Technology Data Analysis &amp; Dashboard</h3>
+          <p class="fs-desc">Classified transaction data in Excel to surface anomalies, then built a Tableau dashboard to communicate findings for stakeholder review.</p>
+          <div class="fs-tags"><span>Tableau</span><span>Excel</span></div>
+          <a class="fs-link" href="assets/forage/deloitte-dashboard.png" target="_blank" rel="noopener">View screenshot →</a>
+        </div>
+      </div>
+  
+      <!-- Data Labeling -->
+      <div class="fs-card">
+        <div class="fs-media fs-text-only">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg>
+          <span>No visual artifact — written deliverable</span>
+        </div>
+        <div class="fs-body">
+          <div class="fs-org-row">
+            <span class="fs-org">Forage Academy</span>
+            <span class="fs-badge">Forage</span>
+          </div>
+          <h3 class="fs-title">Data Labeling for AI Training</h3>
+          <p class="fs-desc">Classified customer support messages for intent, sentiment, and PII, then reviewed peer labeling and proposed a guideline improvement to strengthen consistency.</p>
+          <div class="fs-tags"><span>Data Annotation</span><span>QA Review</span></div>
+          <a class="fs-link disabled">Written deliverable only</a>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
   <section class="section" id="explore" style="padding-top:0;">
     <div class="wrap">
       <div class="section-head">
