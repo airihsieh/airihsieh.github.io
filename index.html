@@ -316,106 +316,139 @@
   .footer-links a{ color:var(--muted); }
   .footer-links a:hover{ color:var(--teal); }
   .footer-note{ font-family:'IBM Plex Mono', monospace; font-size:0.75rem; color:var(--muted); }
-  /* ============ Forage Job Simulations section ============ */
-#forage-sims{
-  max-width: 1080px;   /* 建議跟你 Projects 區塊的 max-width 保持一致 */
-  margin: 0 auto;
-  padding: 64px 24px;
-}
-.fs-eyebrow{
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--teal);
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-.fs-heading{
-  font-size: 1.9rem;
-  font-weight: 700;
-  margin: 0 0 12px;
-}
-.fs-sub{
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  max-width: 640px;
-  margin: 0 0 40px;
-}
-.fs-grid{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-.fs-card{
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-.fs-card:hover{
-  box-shadow: 0 10px 30px rgba(15,107,100,0.12);
-  transform: translateY(-2px);
-}
-.fs-media{
-  background: var(--panel);
-  aspect-ratio: 16/9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.fs-media img{ width: 100%; height: 100%; object-fit: cover; display: block; }
-.fs-media.fs-text-only{ flex-direction: column; gap: 8px; color: var(--muted); }
-.fs-media.fs-text-only svg{ width: 32px; height: 32px; opacity: 0.5; }
-.fs-media.fs-text-only span{ font-size: 0.78rem; letter-spacing: 0.04em; }
-.fs-gallery-count{
-  position: absolute; bottom: 8px; right: 8px;
-  background: rgba(20,30,28,0.72); color: #fff;
-  font-size: 0.7rem; padding: 3px 8px; border-radius: 20px;
-}
-.fs-play-badge{
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(10,20,18,0.0);
-  transition: background 0.2s ease;
-}
-.fs-card:hover .fs-play-badge{ background: rgba(10,20,18,0.15); }
-.fs-play-badge svg{ width: 40px; height: 40px; opacity: 0; transition: opacity 0.2s ease; }
-.fs-card:hover .fs-play-badge svg{ opacity: 1; }
-.fs-body{ padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
-.fs-org-row{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-.fs-org{
-  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--teal-deep);
-}
-.fs-badge{
-  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
-  background: var(--panel); color: var(--muted);
-  padding: 2px 8px; border-radius: 20px; border: 1px solid var(--line);
-}
-.fs-title{ font-size: 1.02rem; font-weight: 600; margin: 0 0 8px; line-height: 1.35; }
-.fs-desc{ font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin: 0 0 14px; flex: 1; }
-.fs-tags{ display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
-.fs-tags span{
-  font-size: 0.68rem; background: var(--panel); color: var(--ink, #1b2430);
-  padding: 3px 8px; border-radius: 5px; border: 1px solid var(--line);
-}
-.fs-link{
-  font-size: 0.82rem; font-weight: 600; color: var(--teal);
-  text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
-}
-.fs-link:hover{ text-decoration: underline; }
-.fs-link.disabled{ color: var(--muted); pointer-events: none; }
-
-@media (max-width: 720px){
-  .fs-grid{ grid-template-columns: 1fr; }
-}
   
+  /* ============ Forage Job Simulations section ============ */
+  #forage-sims{
+    max-width: 1080px;   /* 建議跟你 Projects 區塊的 max-width 保持一致 */
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+  .fs-eyebrow{
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .fs-heading{
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin: 0 0 12px;
+  }
+  .fs-sub{
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 0 40px;
+  }
+  .fs-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .fs-card{
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .fs-card:hover{
+    box-shadow: 0 10px 30px rgba(15,107,100,0.12);
+    transform: translateY(-2px);
+  }
+  .fs-media{
+    background: var(--panel);
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .fs-media img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+  .fs-media.fs-text-only{ flex-direction: column; gap: 8px; color: var(--muted); }
+  .fs-media.fs-text-only svg{ width: 32px; height: 32px; opacity: 0.5; }
+  .fs-media.fs-text-only span{ font-size: 0.78rem; letter-spacing: 0.04em; }
+  .fs-gallery-count{
+    position: absolute; bottom: 8px; right: 8px;
+    background: rgba(20,30,28,0.72); color: #fff;
+    font-size: 0.7rem; padding: 3px 8px; border-radius: 20px;
+  }
+  .fs-play-badge{
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(10,20,18,0.0);
+    transition: background 0.2s ease;
+  }
+  .fs-card:hover .fs-play-badge{ background: rgba(10,20,18,0.15); }
+  .fs-play-badge svg{ width: 40px; height: 40px; opacity: 0; transition: opacity 0.2s ease; }
+  .fs-card:hover .fs-play-badge svg{ opacity: 1; }
+  .fs-body{ padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+  .fs-org-row{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .fs-org{
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--teal-deep);
+  }
+  .fs-badge{
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+    background: var(--panel); color: var(--muted);
+    padding: 2px 8px; border-radius: 20px; border: 1px solid var(--line);
+  }
+  .fs-title{ font-size: 1.02rem; font-weight: 600; margin: 0 0 8px; line-height: 1.35; }
+  .fs-desc{ font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin: 0 0 14px; flex: 1; }
+  .fs-tags{ display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .fs-tags span{
+    font-size: 0.68rem; background: var(--panel); color: var(--ink, #1b2430);
+    padding: 3px 8px; border-radius: 5px; border: 1px solid var(--line);
+  }
+  .fs-link{
+    font-size: 0.82rem; font-weight: 600; color: var(--teal);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+  }
+  .fs-link:hover{ text-decoration: underline; }
+  .fs-link.disabled{ color: var(--muted); pointer-events: none; }
+  
+  @media (max-width: 720px){
+    .fs-grid{ grid-template-columns: 1fr; }
+  }
+  
+  /*<!--Quantium燈箱-->*/
+  .fs-gallery-trigger{ cursor: pointer; }
+
+  .fs-lightbox{
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(10,16,15,0.92);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .fs-lightbox-img{
+    max-width: 88vw; max-height: 82vh;
+    border-radius: 6px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .fs-lightbox-close{
+    position: absolute; top: 20px; right: 28px;
+    background: none; border: none; color: #fff;
+    font-size: 2.2rem; line-height: 1; cursor: pointer;
+  }
+  .fs-lightbox-prev, .fs-lightbox-next{
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.1); border: none; color: #fff;
+    font-size: 2rem; width: 48px; height: 48px; border-radius: 50%;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+  }
+  .fs-lightbox-prev{ left: 20px; }
+  .fs-lightbox-next{ right: 20px; }
+  .fs-lightbox-prev:hover, .fs-lightbox-next:hover{ background: rgba(255,255,255,0.22); }
+  .fs-lightbox-count{
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+    color: #cfe1da; font-size: 0.8rem;
+  }
+
 </style>
 </head>
 <body>
@@ -609,10 +642,10 @@
   
       <!-- Quantium -->
       <div class="fs-card">
-        <a class="fs-media" href="assets/forage/quantium-1.png" target="_blank" rel="noopener">
+        <div class="fs-media fs-gallery-trigger" data-gallery="quantium-gallery">
           <img src="assets/forage/quantium_1.png" alt="Quantium category review chart preview">
-          <span class="fs-gallery-count">4 charts</span>
-        </a>
+          <span class="fs-gallery-count">2 charts</span>
+        </div>
         <div class="fs-body">
           <div class="fs-org-row">
             <span class="fs-org">Quantium</span>
@@ -620,7 +653,13 @@
           <h3 class="fs-title">Category Review: Chips — Customer Analytics &amp; Trial Store Testing</h3>
           <p class="fs-desc">Cleaned 260K+ transaction records in SQL, segmented customers by lifestage, and ran statistical testing to identify the best-matched control stores for a trial uplift analysis.</p>
           <div class="fs-tags"><span>PostgreSQL</span><span>Python</span><span>Tableau</span><span>Statistical Testing</span></div>
-          <a class="fs-link" href="assets/forage/quantium_1.png" target="_blank" rel="noopener">View chart gallery →</a>
+          <a class="fs-link fs-gallery-trigger" href="#" data-gallery="quantium-gallery">View chart gallery →</a>
+        </div>
+      
+        <!-- 這張卡片自己的圖片清單，不會顯示出來，只是給 JS 讀取用 -->
+        <div class="fs-gallery-data" id="quantium-gallery" hidden>
+          <img src="assets/forage/quantium_1.png" alt="Quantium chart 1">
+          <img src="assets/forage/quantium_2.png" alt="Quantium chart 2">
         </div>
       </div>
   
@@ -658,7 +697,19 @@
   
     </div>
   </section>
-  
+  </div>
+</section>
+
+<!-- Lightbox (shared by all gallery cards) -->
+<div id="fs-lightbox" class="fs-lightbox" hidden>
+  <button class="fs-lightbox-close" aria-label="Close">&times;</button>
+  <button class="fs-lightbox-prev" aria-label="Previous">&#8249;</button>
+  <img class="fs-lightbox-img" src="" alt="">
+  <button class="fs-lightbox-next" aria-label="Next">&#8250;</button>
+  <div class="fs-lightbox-count"></div>
+</div>
+
+<!-- Explore the Dashboards -->
   <section class="section" id="explore" style="padding-top:0;">
     <div class="wrap">
       <div class="section-head">
@@ -1052,6 +1103,55 @@
   var tableauScript = document.createElement('script');
   tableauScript.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
   document.body.appendChild(tableauScript);
+</script>
+
+<!-- JS 抓取頁面上的 HTML 元素-->
+<script>
+(function(){
+  var lightbox = document.getElementById('fs-lightbox');
+  var imgEl = lightbox.querySelector('.fs-lightbox-img');
+  var countEl = lightbox.querySelector('.fs-lightbox-count');
+  var images = [];
+  var current = 0;
+
+  function openGallery(galleryId){
+    var dataEl = document.getElementById(galleryId);
+    images = Array.from(dataEl.querySelectorAll('img')).map(function(img){
+      return { src: img.getAttribute('src'), alt: img.getAttribute('alt') };
+    });
+    current = 0;
+    render();
+    lightbox.hidden = false;
+  }
+
+  function render(){
+    imgEl.src = images[current].src;
+    imgEl.alt = images[current].alt;
+    countEl.textContent = (current + 1) + ' / ' + images.length;
+  }
+
+  document.querySelectorAll('.fs-gallery-trigger').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      openGallery(el.getAttribute('data-gallery'));
+    });
+  });
+
+  lightbox.querySelector('.fs-lightbox-close').addEventListener('click', function(){ lightbox.hidden = true; });
+  lightbox.addEventListener('click', function(e){ if(e.target === lightbox) lightbox.hidden = true; });
+  lightbox.querySelector('.fs-lightbox-prev').addEventListener('click', function(){
+    current = (current - 1 + images.length) % images.length; render();
+  });
+  lightbox.querySelector('.fs-lightbox-next').addEventListener('click', function(){
+    current = (current + 1) % images.length; render();
+  });
+  document.addEventListener('keydown', function(e){
+    if(lightbox.hidden) return;
+    if(e.key === 'Escape') lightbox.hidden = true;
+    if(e.key === 'ArrowLeft') lightbox.querySelector('.fs-lightbox-prev').click();
+    if(e.key === 'ArrowRight') lightbox.querySelector('.fs-lightbox-next').click();
+  });
+})();
 </script>
 
 </body>
