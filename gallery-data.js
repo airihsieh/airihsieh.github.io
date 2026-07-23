@@ -23,42 +23,42 @@
 const artworks = [
   {
     src: "assets/img/gallery/tsuilu_wormhole_6th_poster.JPG",
-    title: "《蟲洞》6th 白色恐怖工作坊 主視覺海報",
+    title: "“Wormhole” 6th White Terror Workshop Main Visual Poster",
     tag: "Poster",
     year: "2025",
-    desc: "為淬慮 Tsuilu 公共議題促進協會第六屆「蟲洞．白色恐怖工作坊」繪製的主視覺海報，以島嶼意象串聯白色恐怖歷史場景。"
+    desc: "Created the main visual poster for the 6th “Wormhole: White Terror Workshop” organized by the Tsuilu – Association for Public Issue Promotion, using island imagery to connect historical scenes of the White Terror."
   },
   {
     src: "assets/img/gallery/tsuilu_wormhole_5th_poster.JPG",
-    title: "《蟲洞》5th 白色恐怖工作坊 主視覺海報",
+    title: "“Wormhole” 5th White Terror Workshop Main Visual Poster",
     tag: "Poster",
     year: "2024",
-    desc: "為淬慮 Tsuilu 公共議題促進協會第五屆「蟲洞．白色恐怖工作坊」繪製的主視覺海報，以農民運動過程的意象。"
+    desc: "Designed the key visual poster for the 5th “Wormhole: White Terror Workshop” organized by Tsuilu – Association for Public Issue Promotion, drawing inspiration from the imagery of Taiwan's farmers' movements."
   },
   {
     src: "assets/img/gallery/farmer.JPG",
-    title: "角色設定｜佃農 鐘大虎",
+    title: "Character Profile | Tenant Farmer Zhong Dahu 鐘大虎",
     tag: "Prop",
     year: "2022",
-    desc: "《記憶二度色》體驗工作坊角色卡設定，日殖昭和時期一名佃農。"
+    desc: "Character card design for the Memory in a Second Hue workshop, featuring a tenant farmer during Taiwan's Japanese colonial Shōwa era."
   },
   {
     src: "assets/img/gallery/police.JPG",
-    title: "角色設定｜警察 大山順良",
+    title: "Character Profile | Police Officer Junryo Oyama 大山順良",
     tag: "Prop",
     year: "2022",
-    desc: "《記憶二度色》體驗工作坊角色卡設定，日殖昭和時期一名警察。"
+    desc: "Character card design for the Memory in a Second Hue workshop, featuring a police officer during Taiwan's Japanese colonial Shōwa era."
   },
   {
     src: "assets/img/gallery/landlord.JPG",
-    title: "角色設定｜地主 廖文榮",
+    title: "Character Profile | Landlord Liao Wenrong 廖文榮",
     tag: "Prop",
     year: "2022",
-    desc: "《記憶二度色》體驗工作坊角色卡設定，日殖昭和時期一名地主。"
+    desc: "Character card design for the Memory in a Second Hue workshop, featuring a landlord during Taiwan's Japanese colonial Shōwa era."
   },
   {
     src: "assets/img/gallery/draw_1.PNG",
-    title: "貪．嗔．痴",
+    title: "貪．嗔．痴   Greed · Hatred · Delusion",
     tag: "Illustration",
     year: "2025",
     desc: ""
