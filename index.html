@@ -423,7 +423,10 @@
   .fs-lightbox{
     position: fixed; inset: 0; z-index: 1000;
     background: rgba(10,16,15,0.92);
-    display: flex; align-items: center; justify-content: center;
+    align-items: center; justify-content: center;
+  }
+  .fs-lightbox:not([hidden]){
+      display: flex;
   }
   .fs-lightbox-img{
     max-width: 88vw; max-height: 82vh;
@@ -697,9 +700,7 @@
   
     </div>
   </section>
-  </div>
-</section>
-
+  
 <!-- Lightbox (shared by all gallery cards) -->
 <div id="fs-lightbox" class="fs-lightbox" hidden>
   <button class="fs-lightbox-close" aria-label="Close">&times;</button>
